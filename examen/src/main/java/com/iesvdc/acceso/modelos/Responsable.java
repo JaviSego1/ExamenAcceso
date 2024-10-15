@@ -1,17 +1,24 @@
 package com.iesvdc.acceso.modelos;
 import java.util.Objects;
 
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+
+@XmlRootElement(name = "responsable")
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Responsable {
 
     private String nombre;
     private String puesto;
     private String email;
-    private int experiencia;
+    private Integer experiencia;
+
 
     public Responsable() {
     }
 
-    public Responsable(String nombre, String puesto, String email, int experiencia) {
+    public Responsable(String nombre, String puesto, String email, Integer experiencia) {
         this.nombre = nombre;
         this.puesto = puesto;
         this.email = email;
@@ -42,11 +49,11 @@ public class Responsable {
         this.email = email;
     }
 
-    public int getExperiencia() {
+    public Integer getExperiencia() {
         return this.experiencia;
     }
 
-    public void setExperiencia(int experiencia) {
+    public void setExperiencia(Integer experiencia) {
         this.experiencia = experiencia;
     }
 
@@ -65,7 +72,7 @@ public class Responsable {
         return this;
     }
 
-    public Responsable experiencia(int experiencia) {
+    public Responsable experiencia(Integer experiencia) {
         setExperiencia(experiencia);
         return this;
     }
@@ -78,7 +85,7 @@ public class Responsable {
             return false;
         }
         Responsable responsable = (Responsable) o;
-        return Objects.equals(nombre, responsable.nombre) && Objects.equals(puesto, responsable.puesto) && Objects.equals(email, responsable.email) && experiencia == responsable.experiencia;
+        return Objects.equals(nombre, responsable.nombre) && Objects.equals(puesto, responsable.puesto) && Objects.equals(email, responsable.email) && Objects.equals(experiencia, responsable.experiencia);
     }
 
     @Override
@@ -95,6 +102,8 @@ public class Responsable {
             ", experiencia='" + getExperiencia() + "'" +
             "}";
     }
+
+
     
     
 }

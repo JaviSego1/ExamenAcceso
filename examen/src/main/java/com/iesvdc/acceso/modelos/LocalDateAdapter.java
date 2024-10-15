@@ -3,10 +3,15 @@ package com.iesvdc.acceso.modelos;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 
 public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
 
+    @XmlElement
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
 
     @Override

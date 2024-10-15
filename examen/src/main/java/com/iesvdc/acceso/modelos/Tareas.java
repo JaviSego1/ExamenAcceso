@@ -2,20 +2,26 @@ package com.iesvdc.acceso.modelos;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
 
-public class Tarea {
+@XmlRootElement(name = "tareas")
+@XmlAccessorType (XmlAccessType.FIELD)
+public class Tareas {
 
     private String titulo;
     private String descripcion;
-    private LocalDateAdapter fechaInicio;
-    private LocalDateAdapter fechaFin;
+    private LocalDate fechaInicio;
+    private LocalDate fechaFin;
     private Responsable responsable;
 
 
-    public Tarea() {
+
+    public Tareas() {
     }
 
-    public Tarea(String titulo, String descripcion, LocalDateAdapter fechaInicio, LocalDateAdapter fechaFin, Responsable responsable) {
+    public Tareas(String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, Responsable responsable) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fechaInicio = fechaInicio;
@@ -39,19 +45,19 @@ public class Tarea {
         this.descripcion = descripcion;
     }
 
-    public LocalDateAdapter getFechaInicio() {
+    public LocalDate getFechaInicio() {
         return this.fechaInicio;
     }
 
-    public void setFechaInicio(LocalDateAdapter fechaInicio) {
+    public void setFechaInicio(LocalDate fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public LocalDateAdapter getFechaFin() {
+    public LocalDate getFechaFin() {
         return this.fechaFin;
     }
 
-    public void setFechaFin(LocalDateAdapter fechaFin) {
+    public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
     }
 
@@ -63,27 +69,27 @@ public class Tarea {
         this.responsable = responsable;
     }
 
-    public Tarea titulo(String titulo) {
+    public Tareas titulo(String titulo) {
         setTitulo(titulo);
         return this;
     }
 
-    public Tarea descripcion(String descripcion) {
+    public Tareas descripcion(String descripcion) {
         setDescripcion(descripcion);
         return this;
     }
 
-    public Tarea fechaInicio(LocalDateAdapter fechaInicio) {
+    public Tareas fechaInicio(LocalDate fechaInicio) {
         setFechaInicio(fechaInicio);
         return this;
     }
 
-    public Tarea fechaFin(LocalDateAdapter fechaFin) {
+    public Tareas fechaFin(LocalDate fechaFin) {
         setFechaFin(fechaFin);
         return this;
     }
 
-    public Tarea responsable(Responsable responsable) {
+    public Tareas responsable(Responsable responsable) {
         setResponsable(responsable);
         return this;
     }
@@ -92,11 +98,11 @@ public class Tarea {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Tarea)) {
+        if (!(o instanceof Tareas)) {
             return false;
         }
-        Tarea tarea = (Tarea) o;
-        return Objects.equals(titulo, tarea.titulo) && Objects.equals(descripcion, tarea.descripcion) && Objects.equals(fechaInicio, tarea.fechaInicio) && Objects.equals(fechaFin, tarea.fechaFin) && Objects.equals(responsable, tarea.responsable);
+        Tareas tareas = (Tareas) o;
+        return Objects.equals(titulo, tareas.titulo) && Objects.equals(descripcion, tareas.descripcion) && Objects.equals(fechaInicio, tareas.fechaInicio) && Objects.equals(fechaFin, tareas.fechaFin) && Objects.equals(responsable, tareas.responsable);
     }
 
     @Override
@@ -114,6 +120,7 @@ public class Tarea {
             ", responsable='" + getResponsable() + "'" +
             "}";
     }
+    
     
     
 }
