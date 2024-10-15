@@ -66,6 +66,10 @@ Aparte dentro de la carpeta modelos Proyecto.java, Responsable.java y Tareas.jav
 @XmlRootElement(name = "  ")
 @XmlAccessorType (XmlAccessType.FIELD)
 ```
-## Marshallin y UnMarshalling
+## Marshalling y UnMarshalling
 Una vez hechos todos los modelos, deberemos realizarlo en App.java, si se pasa el numero correcto de argumentos se haria, pero si, no y se explicaria cual es su uso
+
+Para pasar de XML a JSON deberemos primero hacer unmarshall de XML y luego hacer marhsall a JSON
+
+
         
